@@ -62,4 +62,22 @@ Using this approach, when we call the `readers/getrecommendationsasync` endpoint
 
 ### RabbitMQ
 
-I've used a local installation of RabbitMQ for testing this, but you can use a `docker` image for running this sample. I've provided a (`yml` file)[container/docker-compose.yml] for this.
+I've used a local installation of RabbitMQ for testing this, but you can use a `docker` image for running this sample. I've provided a (yml file)[container/docker-compose.yml] for this.
+
+## Running and testing the sample
+
+Make sure the RabbitMQ service is running. You can use `docker-compose up` using the `yml` file provided for standing up the RabbitMQ image.
+You should start by running both WebApi projects by using `dotnet run`. Once both services are running, you can test the sample by using the two endpoints found in the `ReadersService`:
+
+Send an HTTP GET request to the `getrecommendationscoupled` endpoint
+```
+curl http://localhost:5144/readers/getrecommendationscoupled
+```
+This will return a JSON result containing the list of books. As well as logging the result to the console for the corresponding service.
+
+Send an HTTP GET request to the `getrecommendationsasync` endpoint
+
+```
+curl http://localhost:5144/readers/getrecommendationsasync
+```
+This will not return content but will just log to the console in the corresponding service.
