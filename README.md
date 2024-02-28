@@ -49,7 +49,7 @@ For enabling communication among two microservices I've illustrated two approach
 
 ### REST/HTTP
 
-The first one makes use of an `HttpClient` for directly requesting a resource from one microservice to another (`ReadersService` → `BooksService`). This of course creates a tight coupling between the two microservices as the _client_ microservice needs to be aware of specific details about the _provider_ (such as the host URL).
+The first one makes use of an `HttpClient` for directly requesting a resource from one microservice to another (`ReadersService` → `BooksService`). This of course creates a tight coupling between the two microservices as the _client_ microservice needs to be aware of specific details about the _provider_ (such as the host URL). This is considered an anti-pattern in the context of microservices.
 
 ### MassTransit and RabbitMQ
 
