@@ -8,7 +8,7 @@ Here you'll find two microservices in the form of .NET 7 WebApi projects as well
 
 ### The Common project and NuGet package
 
-This contains logic common to both microservices such as DTO classes, contracts, and service setup logic. From this project, a NuGet Package is generated which in turn is referenced within the microservices projects. To run the code, you might need to set up a local NuGet feed pointing to the folder containing the [Common.1.0.2.nupkg](common/package-output) package. This can be done using the following:
+This contains logic common to both microservices such as DTO classes, contracts, and service setup logic. From this project, a NuGet Package is generated which in turn is referenced within the microservices projects. To run the code, you might need to set up a local NuGet feed pointing to the folder containing the [Common.1.0.2.nupkg](common/package-output) package in order to have it be restored correctly. This can be done using the following:
 
 ```
 > dotnet nuget add source SOURCE_DIR -n SOURCE_NAME
